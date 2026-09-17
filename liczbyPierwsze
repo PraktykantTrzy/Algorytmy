@@ -1,0 +1,41 @@
+using System;
+
+namespace liczbyPierwsze
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int t = int.Parse(Console.ReadLine());
+            while(t-- > 0) { 
+            int liczba = int.Parse(Console.ReadLine());
+
+                if (liczba < 2)
+                {
+                    Console.WriteLine("NIE");
+                }
+                else if (liczba == 2)
+                {
+                    Console.WriteLine("TAK");
+                }
+                else
+                {
+                    int dziel = 2;
+                    while (dziel * dziel <= liczba && liczba % dziel != 0)
+                    {
+                        dziel++;
+                    }
+
+                    if (liczba % dziel == 0)
+                    {
+                        Console.WriteLine("NIE");
+                    }
+                    else
+                    {
+                        Console.WriteLine("TAK");
+                    }
+                }
+            }
+        }
+    }
+}
